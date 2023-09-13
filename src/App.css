@@ -10,3 +10,33 @@
 .heading {
   font-family: Poppins;
 }
+
+.main-grid {
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.child-grid h3 {
+  font-family: Poppins;
+  font-weight: 700;
+}
+
+.child-grid p {
+  font-family: Poppins;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.child-grid {
+  border: 2px solid whitesmoke;
+  border-radius: 15px;
+  padding: 10px;
+}
+
+.child-grid:hover {
+  background-color: whitesmoke;
+  color: #212121;
+}

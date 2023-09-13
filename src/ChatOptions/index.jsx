@@ -14,7 +14,7 @@ export const arrayItems = [
   {
     name: 'Python Bug Fixer',
     id: 'pythonBugFixer',
-    descirption: 'Find and fix bugs in source code.'
+    description: 'Find and fix bugs in source code.'
   },
 
   {
