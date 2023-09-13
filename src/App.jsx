@@ -1,11 +1,12 @@
 import './App.css'
 import OptionSelection from './components/OptionSelection';
+import { arrayItems } from './ChatOptions';
 
 function App() {
-  console.log(import.meta.env.VITE_Open_AI_Key);
+  console.log(arrayItems)
   return (
     <div className='App'>
-      <OptionSelection />
+      <OptionSelection arrayItems={arrayItems} />
     </div>
   
   )
