@@ -19,12 +19,70 @@ function App () {
     setOption(option);
   }
 
-  const reply = async() => {
-    let object = {...option, messages: input};
+//   const reply = async() => {
+//     let object = {...option, messages: input};
 
-    const response = await openai.chat.completions.create(object);
-console.log(response)
+//     const response = await openai.chat.completions.create(object);
+// console.log(response)
+//   };
+
+// const reply = async () => {
+
+//   function userId() {
+//     return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+//       var r = (Math.random() * 16) | 0,
+//           v = c == 'x' ? r : (r & 0x3) | 0x8;
+//       return v.toString(16);
+//     });
+//   }
+  
+//   const promptMessage = {
+//     role: 'system',
+//     content: 'You are a helpful assistant.'
+//   };
+
+//   let object = {
+//     ...option,
+//     messages: [promptMessage], // Include the prompt message here
+//     user: userId, // Provide a user ID or identifier here
+//     prompt: input
+//   };
+
+//   const response = await openai.chat.completions.create(object);
+//   console.log(response);
+// };
+
+const reply = async () => {
+  function generateRandomUniqueId() {
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+      var r = (Math.random() * 16) | 0,
+          v = c == 'x' ? r : (r & 0x3) | 0x8;
+      return v.toString(16);
+    });
+  }
+  
+  const userId = generateRandomUniqueId(); // Generate a user ID
+
+  const promptMessage = {
+    role: 'system',
+    content: 'You are a helpful assistant.'
   };
+
+  const userMessage = {
+    role: 'user',
+    content: input // Include user's input message here
+  };
+
+  let object = {
+    ...option,
+    messages: [promptMessage, userMessage], // Include both system and user messages
+    user: userId // Provide the user ID
+  };
+
+  const response = await openai.chat.completions.create(object);
+  console.log(response);
+};
+
 
   console.log(option)
 
