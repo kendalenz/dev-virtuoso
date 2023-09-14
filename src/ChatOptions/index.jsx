@@ -2,7 +2,13 @@ export const arrayItems = [
   {
     name: 'Explain Code',
     id: 'explainCode',
-    description: 'Explain a complicated piece of code.'
+    description: 'Explain a complicated piece of code.',
+    option: {
+      model: 'gpt-4',
+      messages: [],
+      temperature: 0,
+      max_tokens: 1024
+    }
   },
 
   {
