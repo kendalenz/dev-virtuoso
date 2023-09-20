@@ -13,10 +13,10 @@ export default function OptionSelection({ arrayItems, selectOption }) {
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
               </div>
-            )
+            );
           })
         }
       </div>
     </div>
-  )
+  );
 }

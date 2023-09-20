@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Translation({ reply, setInput, result }) {
   
@@ -22,14 +23,15 @@ export default function Translation({ reply, setInput, result }) {
         >
           <path d="M2.117 12l7.527 6.235-.644.765-9-7.521 9-7.479.645.764-7.529 6.236h21.884v1h-21.883z"/>
         </svg>
-        <h3 className="ml-2">Home</h3>
+        <Link to='/'>
+          <h3 className="ml-2">Home</h3>
+        </Link>
       </div>
-
       <div className="container">
         <div className="row justify-content-center text-center">
           <div className="col-12 col-md-6">
-            <textarea className="form-control mb-3" rows="10" placeholder="Enter text" onChange="setInput(this.value)"></textarea>
-            <button className="btn btn-primary btn-block" onClick="handleClick()">Submit</button>
+            <textarea className="form-control mb-3" rows="10" placeholder="Enter text" onChange={(e) => setInput(e.target.value)}></textarea>
+            <button className="btn btn-primary btn-block" onClick={reply}>Submit</button>
           </div>
         </div>
       </div>
