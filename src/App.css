@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Carrois+Gothic&display=swap');
 
 body {
-  background-color: #242424;
-  color: #f5f5f5;
+  background-color: #f5f5f5;
+  color: #000000;
+  font-family: 'Carrois Gothic';
+  margin: 4rem;
 }
 
 #root {
@@ -12,44 +14,14 @@ body {
   text-align: center;
 }
 
-.heading {
-  font-family: Poppins;
-}
-
-.main-grid {
-  display: grid;
-  grid-template-columns: auto auto;
-  gap: 15px;
-  margin-top: 40px;
-}
-
-.child-grid h3 {
-  font-family: Poppins;
-  font-weight: 700;
-}
-
-.child-grid p {
-  font-family: Poppins;
-  font-weight: 500;
-  font-size: 15px;
-  cursor: pointer;
-}
-
-.child-grid {
-  border: 2px solid whitesmoke;
-  border-radius: 15px;
-  padding: 10px;
-}
-
-.child-grid:hover {
-  background-color: whitesmoke;
-  color: #212121;
-}
-
 .text-area {
   font-size: 20px;
   padding: 10px;
-  font-family: Poppins;
+  font-family: 'Carrois Gothic';
+}
+
+.btn-light {
+  background-color: #FFFFFF;
 }
 
 .submit-btn {
