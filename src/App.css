@@ -31,3 +31,8 @@ body {
   margin-top: 20px;
   cursor: pointer;
 }
+
+/* CSS to change the cursor to a hand on card hover */
+.card-body:hover {
+  cursor: pointer;
+}
