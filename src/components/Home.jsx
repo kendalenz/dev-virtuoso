@@ -9,9 +9,9 @@ const Home = () => {
   });
 
   const [input, setInput] = useState('');
-  const [result, setResult] = useState('');
+  const [result, setResult] = useState(''); // Use state to store the response
 
-  const reply = async () => {
+  const reply = async (inputMessage) => {
     function generateRandomUniqueId() {
       return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (
         c
@@ -31,7 +31,7 @@ const Home = () => {
 
     const userMessage = {
       role: 'user',
-      content: input, // Include user's input message here
+      content: inputMessage, // Include user's input message here
     };
 
     // Define a default option object with a model parameter
@@ -49,7 +49,7 @@ const Home = () => {
     };
 
     const response = await openai.chat.completions.create(object);
-    setResult(response.choices[0].message.content);
+    setResult(response.choices[0].message.content); // Update the result state
   };
 
   return (
@@ -60,3 +60,4 @@ const Home = () => {
 };
 
 export default Home;
+
