@@ -1,8 +1,14 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
+import { gsap } from 'gsap';
+import { TextPlugin } from 'gsap/all';
+
+gsap.registerPlugin(TextPlugin);
+
 
 export default function Translation({ reply, setInput, result, prompt }) {
   const [loading, setLoading] = useState(false);
   const [textAreaValue, setTextAreaValue] = useState('');
+  const loadingTextRef = useRef(null);
 
   const handleClick = async () => {
     setLoading(true);
@@ -17,6 +23,33 @@ export default function Translation({ reply, setInput, result, prompt }) {
 
     setLoading(false);
   };
+
+  const animateLoadingText = () => {
+    const dots = '...';
+    const dotArray = dots.split('');
+    const duration = 0.5;
+  
+    // Create a timeline to sequence the animation
+    const tl = gsap.timeline();
+  
+    dotArray.forEach((dot, index) => {
+      tl.to(loadingTextRef.current, { text: `Writing in progress${dots.substring(0, index + 1)}`, duration });
+    });
+  
+    tl.to(loadingTextRef.current, { text: 'Writing in progress', duration });
+  
+    // Repeat the timeline indefinitely
+    tl.repeat(-1);
+  };
+  
+  useEffect(() => {
+    if (loading) {
+      animateLoadingText();
+    } else {
+      // If loading is done, clear the animation
+      gsap.killTweensOf(loadingTextRef.current);
+    }
+  }, [loading]);  
 
   return (
     <div>
@@ -80,7 +113,7 @@ export default function Translation({ reply, setInput, result, prompt }) {
       </div>
 
       {loading ? (
-        <p>Writing in progress...</p>
+        <p className='mt-4' ref={loadingTextRef}>Writing in progress...</p>
       ) : (
         <div className='result-text text-left my-4'>
           {result.length > 0 ? (
