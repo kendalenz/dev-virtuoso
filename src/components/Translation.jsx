@@ -1,9 +1,10 @@
-import React, { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/all';
+import { saveAs } from 'file-saver';
+
 
 gsap.registerPlugin(TextPlugin);
-
 
 export default function Translation({ reply, setInput, result, prompt }) {
   const [loading, setLoading] = useState(false);
@@ -50,6 +51,17 @@ export default function Translation({ reply, setInput, result, prompt }) {
       gsap.killTweensOf(loadingTextRef.current);
     }
   }, [loading]);  
+
+  // const downloadAsWordDocument = () => {
+  //   const blob = new Blob([result], { type: 'application/msword' });
+  //   saveAs(blob, 'generated_text.doc');
+  // };  
+
+  const downloadAsWordDocument = () => {
+    const blob = new Blob([result], { type: 'application/msword' });
+    saveAs(blob, 'generated_text.doc', { autoBOM: true });
+  };
+  
 
   return (
     <div>
@@ -116,13 +128,19 @@ export default function Translation({ reply, setInput, result, prompt }) {
         <p className='mt-4' ref={loadingTextRef}>Writing in progress...</p>
       ) : (
         <div className='result-text text-left my-4'>
-          {result.length > 0 ? (
-            result.split('\n\n').map((paragraph, index) => (
-              <p key={index}>{paragraph}</p>
-            ))
-          ) : (
-            ''
-          )}
+         {result.length > 0 ? (
+  <div>
+    {result.split('\n\n').map((paragraph, index) => (
+      <p key={index}>{paragraph}</p>
+    ))}
+    <button className="btn btn-light border-dark rounded-0 btn-block" onClick={downloadAsWordDocument}>
+      Download as Word Document
+    </button>
+  </div>
+) : (
+  ''
+)}
+          
         </div>
       )}
     </div>
