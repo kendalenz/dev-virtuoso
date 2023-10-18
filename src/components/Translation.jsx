@@ -54,7 +54,7 @@ export default function Translation({ reply, setInput, setResult, result, prompt
   
         const zip = new PizZip(templateData);
   
-        const doc = new Docxtemplater(zip, { linebreaks: true });
+        const doc = new Docxtemplater();
         doc.loadZip(zip);
   
         // Set your data
