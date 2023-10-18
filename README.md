@@ -1,9 +1,18 @@
-# React + Vite
+# Narrative Genius
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A chat bot for generating creative writing pieces built using Vite, React, JavaScript, Docxtemplater, GSAP and the OpenAI API.
 
-Currently, two official plugins are available:
+The website was deployed on CloudFlare Pages and can be viewed at: https://narrative-genius.pages.dev/. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-# dev-virtuoso
+## Features
+* Generate creative writing pieces with OpenAI API
+* Download generated text in Word/Pages
+* Mobile responsive
+
+## Useage
+After you clone this repo to your desktop, go to its root directory and run npm install to install its dependencies.
+
+Once the dependencies are installed, you can npm run dev to start the application. You will then be able to access it at localhost:5173/.
+
+## Support My Work
+If you find my code useful, please consider buying me a coffee: https://www.buymeacoffee.com/kendalenz.
