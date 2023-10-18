@@ -3,7 +3,6 @@ import { gsap } from 'gsap';
 import { TextPlugin } from 'gsap/all';
 import { saveAs } from 'file-saver';
 
-
 gsap.registerPlugin(TextPlugin);
 
 export default function Translation({ reply, setInput, result, prompt }) {
@@ -62,7 +61,6 @@ export default function Translation({ reply, setInput, result, prompt }) {
     saveAs(blob, 'generated_text.doc', { autoBOM: true });
   };
   
-
   return (
     <div>
       <div className="d-flex align-items-center justify-content-center">
@@ -136,6 +134,9 @@ export default function Translation({ reply, setInput, result, prompt }) {
     <button className="btn btn-light border-dark rounded-0 btn-block" onClick={downloadAsWordDocument}>
       Download as Word Document
     </button>
+    {/* <button className="btn btn-light border-dark rounded-0 btn-block" onClick={openInPages}>
+        Open in Pages
+      </button> */}
   </div>
 ) : (
   ''
