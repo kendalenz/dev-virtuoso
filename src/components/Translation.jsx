@@ -74,7 +74,7 @@ export default function Translation({ reply, setInput, setResult, result, prompt
   
   return (
     <div>
-      <div className="d-flex align-items-center justify-content-center">
+      <div className="d-flex align-items-center justify-content-center body-mt">
         <h2 className="mb-4">NarrativeGenius</h2>
       </div>
 
@@ -140,7 +140,8 @@ export default function Translation({ reply, setInput, setResult, result, prompt
           </div>
         </div>
       </div>
-
+      
+      <div className='body-mx'>
       {loading ? (
         <p className="mt-4" ref={loadingTextRef}>Writing in progress...</p>
       ) : (
@@ -150,15 +151,19 @@ export default function Translation({ reply, setInput, setResult, result, prompt
               {result.split('\n\n').map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
-              <button className="btn btn-light border-dark rounded-0 btn-block" onClick={() => downloadAsWordDocument(result)}>
-                Download as Word Document
-              </button>
+              <div className="d-flex justify-content-start">
+                <button className="btn btn-light border-dark rounded-0" onClick={() => downloadAsWordDocument(result)}>
+                  Download Word Document
+                </button>
+              </div>
             </div>
           ) : (
             ''
           )}
+        
         </div>
       )}
+      </div>
     </div>
   );
 }
