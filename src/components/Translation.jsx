@@ -151,7 +151,7 @@ export default function Translation({ reply, setInput, setResult, result, prompt
               {result.split('\n\n').map((paragraph, index) => (
                 <p key={index}>{paragraph}</p>
               ))}
-              <div className="d-flex justify-content-start">
+              <div className="d-flex justify-content-center justify-content-md-start">
                 <button className="btn btn-light border-dark rounded-0" onClick={() => downloadAsWordDocument(result)}>
                   Download Word Document
                 </button>

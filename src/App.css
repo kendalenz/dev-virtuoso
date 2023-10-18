@@ -19,6 +19,9 @@ body {
   .body-mt {
     margin: .1rem;
   }
+}
+
+@media only screen and (max-width: 600px) {
   .body-mx {
     margin-left: .1rem;
     margin-right: .1rem;
