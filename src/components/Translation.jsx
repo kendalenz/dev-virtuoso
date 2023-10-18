@@ -74,7 +74,7 @@ export default function Translation({ reply, setInput, setResult, result, prompt
   
   return (
     <div>
-      <div className="d-flex align-items-center justify-content-center body-mt">
+      <div className="d-flex align-items-center justify-content-center">
         <h2 className="mb-4">NarrativeGenius</h2>
       </div>
 
@@ -126,9 +126,6 @@ export default function Translation({ reply, setInput, setResult, result, prompt
               onChange={(e) => setTextAreaValue(e.target.value)}
               value={textAreaValue}
             ></textarea>
-            {/* <button className="btn btn-light border-dark rounded-0 btn-block" onClick={handleClick}>
-              CREATE
-            </button> */}
              <div className="d-flex justify-content-center">
               <button className="btn btn-light border-dark rounded-0 mr-2" onClick={handleClick}>
                 CREATE
