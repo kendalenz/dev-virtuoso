@@ -54,7 +54,7 @@ export default function Translation({ reply, setInput, setResult, result, prompt
   
         const zip = new PizZip(templateData);
   
-        const doc = new Docxtemplater();
+        const doc = new Docxtemplater(zip, { linebreaks: true });
         doc.loadZip(zip);
   
         // Set your data
@@ -138,7 +138,6 @@ export default function Translation({ reply, setInput, setResult, result, prompt
         </div>
       </div>
       
-      <div className='body-mx'>
       {loading ? (
         <p className="mt-4" ref={loadingTextRef}>Writing in progress...</p>
       ) : (
@@ -160,7 +159,6 @@ export default function Translation({ reply, setInput, setResult, result, prompt
         
         </div>
       )}
-      </div>
     </div>
   );
 }
