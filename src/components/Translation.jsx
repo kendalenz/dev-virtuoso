@@ -126,9 +126,17 @@ export default function Translation({ reply, setInput, setResult, result, prompt
               onChange={(e) => setTextAreaValue(e.target.value)}
               value={textAreaValue}
             ></textarea>
-            <button className="btn btn-light border-dark rounded-0 btn-block" onClick={handleClick}>
+            {/* <button className="btn btn-light border-dark rounded-0 btn-block" onClick={handleClick}>
               CREATE
-            </button>
+            </button> */}
+             <div className="d-flex justify-content-center">
+              <button className="btn btn-light border-dark rounded-0 mr-2" onClick={handleClick}>
+                CREATE
+              </button>
+              <button className="btn btn-light border-dark rounded-0" onClick={() => setTextAreaValue('')}>
+                CLEAR
+              </button>
+            </div>
           </div>
         </div>
       </div>
