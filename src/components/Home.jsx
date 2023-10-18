@@ -1,6 +1,6 @@
 
 import OpenAI from 'openai';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Translation from './Translation';
 
 const Home = () => {
@@ -12,7 +12,12 @@ const Home = () => {
   const [input, setInput] = useState('');
   const [result, setResult] = useState(''); // Use state to store the response
 
-  const reply = async (inputMessage) => {
+  useEffect(() => {
+    // This effect will run whenever the "result" state updates
+    console.log('Result State:', result);
+  }, [result]);
+
+  const reply = async (inputMessage, setResult) => {
     function generateRandomUniqueId() {
       return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (
         c
@@ -50,12 +55,14 @@ const Home = () => {
     };
 
     const response = await openai.chat.completions.create(object);
+    console.log('API Response:', response);
+
     setResult(response.choices[0].message.content); // Update the result state
   };
 
   return (
     <div>
-      <Translation reply={reply} setInput={setInput} result={result} />
+      <Translation reply={(inputMessage) => reply(inputMessage, setResult)} setInput={setInput} result={result} />
     </div>
   );
 };
