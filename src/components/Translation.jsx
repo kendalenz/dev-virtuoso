@@ -83,28 +83,28 @@ export default function Translation({ reply, setInput, setResult, result, prompt
           <div className='col-md-6'>
             <div className='card mb-3' onClick={() => setTextAreaValue("Write a poem\nabout mushrooms in the voice of Theodore Roethke")}>
               <div className='card-body text-left'>
-                <p className='card-text'><span>Write a poem</span><br/>about mushrooms in the voice of Theodore Roethke</p>
+                <p className='card-text'><strong>Write a poem</strong><br/>about mushrooms in the voice of Theodore Roethke</p>
               </div>
             </div>
           </div>
           <div className='col-md-6'>
             <div className='card mb-3' onClick={() => setTextAreaValue("Write a short story\nabout a depressed school teacher in the voice of Raymond Carver")}>
               <div className='card-body text-left'>
-                <p className='card-text'><span>Write a short story</span><br/>about a depressed school teacher in the voice of Raymond Carver</p>
+                <p className='card-text'><strong>Write a short story</strong><br/>about a depressed school teacher in the voice of Raymond Carver</p>
               </div>
             </div>
           </div>
           <div className='col-md-6'>
-            <div className='card mb-3' onClick={() => setTextAreaValue("Write two paragraphs\ndescribing a sunset in Shenandoah National Park")}>
+            <div className='card mb-3 hidden-on-mobile' onClick={() => setTextAreaValue("Write two paragraphs\ndescribing a sunset in Shenandoah National Park")}>
               <div className='card-body text-left'>
-                <p className='card-text'><span>Write two paragraphs</span><br/>describing a sunset in Shenandoah National Park</p>
+                <p className='card-text'><strong>Write two paragraphs</strong><br/>describing a sunset in Shenandoah National Park</p>
               </div>
             </div>
           </div>
           <div className='col-md-6'>
-            <div className='card mb-3' onClick={() => setTextAreaValue("Write humorous dialogue\nbetween a man and his talking dog.")}>
+            <div className='card mb-3 hidden-on-mobile' onClick={() => setTextAreaValue("Write humorous dialogue\nbetween a man and his talking dog.")}>
               <div className='card-body text-left'>
-                <p className='card-text'><span>Write humorous dialogue</span><br/>between a man and his talking dog.</p>
+                <p className='card-text'><strong>Write humorous dialogue</strong><br/>between a man and his talking dog</p>
               </div>
             </div>
           </div>
