@@ -156,7 +156,6 @@ export default function Translation({ reply, setInput, setResult, result, prompt
           ) : (
             ''
           )}
-        
         </div>
       )}
     </div>
